@@ -5,4 +5,11 @@ We will make it public after publication
 <code>pytorch 1.13.1</code><br/>
 <code>scikit-learn 1.3.2</code>
 <h1>Usage</h1>
-<code>import torch</code>
+<code>model = main(in_channels=191, num_clusters=16, )</code><br/>
+<code>out, out1, out2= model(MS_image)<br/>
+loss        = criterion(outputs, to_variable(reference)) # + 0.001 * SAM(outputs, to_variable(reference))<br/>
+            loss1 = criterion(out1, to_variable(downX2(reference)))<br/>
+            loss2 = criterion(out2, to_variable(downX2(downX2(reference))))<br/>
+            SAM_loss = SAM(outputs, to_variable(reference))<br/>
+            loss = loss + SAM_loss / (SAM_loss / loss).detach() + loss1 / (loss1 / loss).detach() + loss2 / (loss2 / loss).detach() <br/>
+</code>
