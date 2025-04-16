@@ -5,7 +5,7 @@ We will make it public after publication
 <code>pytorch 1.13.1</code><br/>
 <code>scikit-learn 1.3.2</code>
 <h1>Usage</h1>
-This is a setting examples as a scale factor of ×4<br/>
+This is a Loss function setting examples as a scale factor of ×4<br/>
 <code>model = main(in_channels=191, num_clusters=16, )</code><br/>
 <code>out, out1, out2= model(MS_image)<br/>
 loss = criterion(outputs, to_variable(reference)) 
